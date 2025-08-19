@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/abdsh/OneDrive/Desktop/huji cs/OOP-1/project 03/src</OriginalElement>
+  <nodes>
+    <node x="150.2481108175283" y="2838.1709409991677">image_char_matching.RoundingStratgie.RounderAbs</node>
+    <node x="1026.5763839375654" y="1199.135849859128">ascii_art.Shell</node>
+    <node x="1470.5763839375654" y="-10.0">ascii_art.KeyboardInput</node>
+    <node x="541.4941809739535" y="304.7634925126995">ascii_output.ConsoleAsciiOutput</node>
+    <node x="556.6295471589914" y="2799.78642144554">image_char_matching.RoundingStratgie.RounderFactory</node>
+    <node x="817.3658377776499" y="556.0518191408323">ascii_output.AsciiOutput</node>
+    <node x="-73.1933115972198" y="2165.8072700138437">image_char_matching.RoundingStratgie.FloorRoundStrategic</node>
+    <node x="768.8337727754331" y="2384.5065089099257">image_char_matching.RoundingStratgie.CeilRoundStrategic</node>
+    <node x="779.026606206197" y="-10.0">ascii_art.OutputFactory</node>
+    <node x="1068.0817662256231" y="319.7472174384111">ascii_output.HtmlAsciiOutput</node>
+    <node x="-77.0" y="2576.309121142234">image_char_matching.RoundingStratgie.RoundingKeyStrategy</node>
+    <node x="426.470298893783" y="1855.894438613443">image_char_matching.SubImgCharMatcher</node>
+    <node x="378.1932074382582" y="1018.4273090833592">image.Image</node>
+    <node x="1697.5763839375654" y="-10.0">image_char_matching.CharConverter</node>
+    <node x="723.316577407717" y="836.5560867168592">ascii_art.AsciiArtAlgorithm</node>
+    <node x="-41.38801715052426" y="1191.9543018183936">image.ImageProcessor</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="image.ImageProcessor" target="image.Image" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderFactory" target="image_char_matching.SubImgCharMatcher" relationship="TO_ONE">
+      <point x="-10.133991114765166" y="0.0" />
+      <point x="-10.133991114765166" y="5.684341886080802E-14" />
+    </edge>
+    <edge source="image_char_matching.SubImgCharMatcher" target="image_char_matching.RoundingStratgie.RounderFactory" relationship="TO_ONE">
+      <point x="-1.4210854715202004E-14" y="5.684341886080802E-14" />
+      <point x="0.0" y="-5.684341886080802E-14" />
+    </edge>
+    <edge source="ascii_art.AsciiArtAlgorithm" target="image.Image" relationship="CREATE">
+      <point x="0.0" y="-5.3501509283396445" />
+      <point x="1.7763568394002505E-15" y="-5.350150928340099" />
+    </edge>
+    <edge source="ascii_output.HtmlAsciiOutput" target="ascii_output.AsciiOutput" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.AsciiArtAlgorithm" target="image_char_matching.SubImgCharMatcher" relationship="TO_ONE">
+      <point x="-5.1763809020504254" y="0.0" />
+      <point x="-5.176380902050397" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.CeilRoundStrategic" target="image_char_matching.SubImgCharMatcher" relationship="TO_ONE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderFactory" target="image_char_matching.RoundingStratgie.CeilRoundStrategic" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.Shell" target="ascii_art.AsciiArtAlgorithm" relationship="TO_ONE">
+      <point x="7.6698478227590385" y="0.0" />
+      <point x="-5.684341886080802E-14" y="-6.5936789650124865" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderFactory" target="image_char_matching.RoundingStratgie.RounderAbs" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderAbs" target="image_char_matching.SubImgCharMatcher" relationship="TO_ONE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.AsciiArtAlgorithm" target="ascii_output.AsciiOutput" relationship="TO_ONE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.SubImgCharMatcher" target="image_char_matching.RoundingStratgie.RoundingKeyStrategy" relationship="TO_ONE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.SubImgCharMatcher" target="image_char_matching.RoundingStratgie.RounderFactory" relationship="CREATE">
+      <point x="10.13399111476518" y="5.684341886080802E-14" />
+      <point x="10.133991114765223" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderAbs" target="image_char_matching.RoundingStratgie.RoundingKeyStrategy" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.AsciiArtAlgorithm" target="image.Image" relationship="TO_MANY">
+      <point x="0.0" y="5.3501509283396445" />
+      <point x="0.0" y="5.350150928340099" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.FloorRoundStrategic" target="image_char_matching.RoundingStratgie.RoundingKeyStrategy" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_output.ConsoleAsciiOutput" target="ascii_output.AsciiOutput" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.Shell" target="ascii_art.AsciiArtAlgorithm" relationship="CREATE">
+      <point x="-7.6698478227590385" y="0.0" />
+      <point x="0.0" y="6.593678965012714" />
+    </edge>
+    <edge source="ascii_art.AsciiArtAlgorithm" target="image_char_matching.SubImgCharMatcher" relationship="CREATE">
+      <point x="5.176380902050369" y="0.0" />
+      <point x="5.176380902050383" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.CeilRoundStrategic" target="image_char_matching.RoundingStratgie.RoundingKeyStrategy" relationship="REALIZATION">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.RounderFactory" target="image_char_matching.RoundingStratgie.FloorRoundStrategic" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.OutputFactory" target="ascii_output.ConsoleAsciiOutput" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="image_char_matching.RoundingStratgie.FloorRoundStrategic" target="image_char_matching.SubImgCharMatcher" relationship="TO_ONE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ascii_art.OutputFactory" target="ascii_output.HtmlAsciiOutput" relationship="CREATE">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Circular" zoom="1.0" showDependencies="true" x="1002.0" y="1468.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>protected</VISIBILITY>
+</Diagram>
+

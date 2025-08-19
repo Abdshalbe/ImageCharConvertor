@@ -1,0 +1,81 @@
+taqi_ahmad77,abd.shalbe
+325854990,212867089
+
+1. UML and Class Responsibilities
+Our ASCII Art conversion system is modular and adheres to solid OOP principles. The main components are:
+    SubImgCharMatcher (package: image_char_matching)
+    Matches image blocks to the best-fitting ASCII character based on brightness.
+    Uses CharConverter to convert characters into 2D boolean matrices.
+    Computes average brightness per character and caches it for efficiency.
+    ImageProcessor (package: image)
+    Preprocesses the image: handles padding and divides it into sub-images (blocks) of fixed size.
+    Returns a grid of brightness values for each block.
+    AsciiArtAlgorithm (package: ascii_art)
+
+Orchestrates the overall process.
+Invokes ImageProcessor to process the image and SubImgCharMatcher to select characters.
+Produces a char[][] representing the final ASCII art.
+This modular design enables easy modification of components (e.g., charset, block size, output type)
+without affecting unrelated parts of the system.
+
+2. Java Data Structures and Rationale
+In ImageProcessor, we use List<List<Double>> to represent the brightness values of image blocks,
+providing intuitive row-column access that mirrors the structure of the final ASCII art output.
+
+In SubImgCharMatcher, we use a List<Character> to manage the character set dynamically
+(for adding/removing characters).
+This keeps the system extensible.
+
+3. Java I/O and Error Handling
+    User input is handled via the KeyboardInput class using readLine().
+    Exception handling is implemented in the Shell class using Java’s try-catch mechanism.
+    If errors such as invalid file paths or illegal arguments occur,
+    informative messages are printed instead of crashing the program.
+
+    More detailed validation (e.g., for block size and image format) will be introduced in
+    future integration phases.
+
+4. API Conformance: SubImgCharMatcher
+    This class fully adheres to the required public API:
+
+    public char getCharByImageBrightness(double brightness)
+
+    public void addChar(char c)
+
+    public void removeChar(char c)
+
+No additional public methods were added, ensuring strict compliance.
+
+5. ASCII Output Package Integration
+    We retained the original ascii_output package structure and behavior.
+    The final character matrix (char[][]) produced by AsciiArtAlgorithm is passed
+    directly to either ConsoleAsciiOutput
+    or HtmlAsciiOutput, depending on user selection.
+
+6. Algorithm Efficiency – Caching and Optimization
+    To reduce computational overhead and improve performance, we implemented:
+
+    Character Brightness Caching:
+    Each character’s brightness is calculated once and reused during matching.
+
+    Sub-image Brightness Caching:
+    Brightness of each sub-image is computed during preprocessing and reused in matching.
+
+    Matching Optimization:
+    Currently, a linear search is used for simplicity. In future iterations,
+    brightness values can be sorted and matched using binary search for efficiency with large character sets.
+
+Design Notes
+The modular design ensures separation of concerns:
+    ImageProcessor handles image division, SubImgCharMatcher handles brightness mapping,
+     and AsciiArtAlgorithm coordinates the process.
+    Brightness normalization allows accurate matching between image regions and ASCII characters.
+    Padding logic ensures that all image dimensions are compatible with the block size.
+
+7. Exception Handling
+    Exception handling is implemented robustly:
+        In the Shell.run() method, any runtime exception (e.g., IOException, IllegalArgumentException)
+         is caught and handled gracefully.
+        Error messages guide the user without interrupting the program flow.
+        Future improvements will introduce more specific exception classes and validations.
+
